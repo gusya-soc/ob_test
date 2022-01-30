@@ -76,11 +76,9 @@ WSGI_APPLICATION = 'ovaas_backend_django.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.environ['SQL_NAME'],
         'HOST': HOST_SQL + ".mysql.database.azure.com",
         'USER': os.environ['SQL_USER'],
-        'PASSWORD': os.environ['SQL_PASSWORD'],
-        'PORT':os.environ['SQL_PORT']
+        'PASSWORD': os.environ['SQL_PASSWORD']
     }
 }
 
