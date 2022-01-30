@@ -78,10 +78,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': os.environ['SQL_NAME'],
         'HOST': HOST_SQL + ".mysql.database.azure.com",
-        'USER': os.environ['SQL_USER'] + "@" + HOST_SQL,
+        'USER': os.environ['SQL_USER'],
         'PASSWORD': os.environ['SQL_PASSWORD'],
-        'PORT':os.environ['SQL_PORT'],
-        'OPTIONS': {'ssl': {'ca': BASE_DIR/'ssl/BaltimoreCyberTrustRoot.crt.pem'}}
+        'PORT':os.environ['SQL_PORT']
     }
 }
 
@@ -102,6 +101,9 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'
+SESSION_COOKIE_NAME = 'sessionid'
 
 
 # Internationalization

@@ -10,5 +10,8 @@ class Login(APIView):
 
     authentication_classes = [NormalAuthentication,]
 
+    
+
     def post(self, request, *args, **kwargs):
-        return Response({"token": request.user})
+        # return Response({"token": request.user})
+        return Response('aaaaaa')
