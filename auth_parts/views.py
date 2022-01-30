@@ -8,7 +8,7 @@ from .utils.auth import NormalAuthentication
 
 class Login(APIView):
 
-    authentication_classes = [NormalAuthentication,]
+    # authentication_classes = [NormalAuthentication,]
 
     
 
