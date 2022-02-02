@@ -8,8 +8,8 @@ from .cosmosdb import CosmosDB
 
 
 class RegModel(APIView):
-    auth_class = [authentication.TokenAuthentication]
-    permission_class = [permissions.IsAuthenticated]
+    # auth_class = [authentication.TokenAuthentication]
+    # permission_class = [permissions.IsAuthenticated]
 
     def get(self,**kwargs):
         pass
