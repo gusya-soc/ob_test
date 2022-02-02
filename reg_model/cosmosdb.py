@@ -15,13 +15,13 @@ class CosmosDB():
         self.collection = self.db[collection]
 
     def insert(self,doc):
-        request = InsertOne(doc)
+        request = [InsertOne(doc)]
         result = self.process(request)
         assert result.inserted_count == 1
         return result
     
     def remove(self,id):
-        request = DeleteOne({"id":id})
+        request = [DeleteOne({"id":id})]
         result = self.process(request)
         assert result.deleted_count == 1
     
@@ -29,7 +29,7 @@ class CosmosDB():
         return self.collection.find_one({"id":id})
  
     def update(self,id,doc):
-        request = ReplaceOne({"id":id},doc,upsert=True)
+        request = [ReplaceOne({"id":id},doc,upsert=True)]
         result = self.process(request)
         logging.info(f"{result.modified_conut},{result.upserted_ids}")
     
