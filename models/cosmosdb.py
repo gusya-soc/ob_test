@@ -1,5 +1,3 @@
-from urllib import request
-from django.db import connection
 import logging
 import pymongo
 import os
