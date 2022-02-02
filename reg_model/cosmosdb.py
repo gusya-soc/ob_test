@@ -17,6 +17,7 @@ class CosmosDB():
         request = InsertOne(doc)
         result = self.process(request)
         assert result.inserted_count == 1
+        return result
     
     def remove(self,id):
         request = DeleteOne({"id":id})
