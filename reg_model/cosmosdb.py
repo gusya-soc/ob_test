@@ -11,7 +11,8 @@ class CosmosDB():
         self.connection_string = os.environ['CON_STRING']
         self.client = pymongo.MongoClient(self.connection_string)
         # self.collection = collection
-        self.collection = self.client[collection]
+        self.db = self.client['test']
+        self.collection = self.db[collection]
 
     def insert(self,doc):
         request = InsertOne(doc)
