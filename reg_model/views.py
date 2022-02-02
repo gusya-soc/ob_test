@@ -15,5 +15,7 @@ class RegModel(APIView):
         pass
 
     def post(self,request):
-        return Response(f"{request.data},aaaaaa")
+        data = request.data
+        model = data['model']
+        return Response(f"{model},aaaaaa")
 
