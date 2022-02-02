@@ -15,5 +15,5 @@ class RegModel(APIView):
         pass
 
     def post(self,request):
-        return Response(f"{request.data}")
+        return Response(f"{request.data},aaaaaa")
 
