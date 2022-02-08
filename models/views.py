@@ -4,6 +4,7 @@ from rest_framework.response import Response
 from rest_framework import authentication,permissions
 from rest_framework.parsers import FileUploadParser
 from .cosmosdb import CosmosDB
+from .blobdb import BlobDB
 
 collection = 'models'
 
@@ -37,9 +38,10 @@ class SaveModelFile(APIView):
     # parser_classes = [FileUploadParser]
 
     def post(self,request):
-        a = request.data['file']
-        b = request.data['filename']
-        print(f'{type(a)},{len(a)}\n{type(b),len(b)}')
-        print(a,b)
-        print(a.name)
-        return Response(f'{type(a)},{len(a)}\n{type(b),len(b)}')
+        file = request.data['file']
+        filename = file.name
+        blobDB = BlobDB()
+        re = blobDB.create(id='123123123123',file=file)
+        print(re)
+        print(re.items())
+        return Response(f'{filename}upload completed\n{re.items()}')
