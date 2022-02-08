@@ -40,7 +40,7 @@ class SaveModelFile(APIView):
     def post(self,request):
         file = request.data['file']
         filename = file.name
-        blobDB = BlobDB()
+        blobDB = BlobDB('containertest')
         re = blobDB.create(id='123123123123',file=file)
         print(re)
         print(re.items())
