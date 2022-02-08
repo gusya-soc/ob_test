@@ -4,3 +4,4 @@ django-environ
 mysqlclient
 pyjwt
 pymongo
+azure-storage-blob

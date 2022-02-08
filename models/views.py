@@ -31,3 +31,11 @@ class GetModel(APIView):
         cdb = CosmosDB(collection)
         result = cdb.find_by_id(id)
         return Response(f"{result}")
+
+class SaveModelFile(APIView):
+
+
+    def post(self,request,filename):
+        a = print(request.data['file'])
+        b = print(filename)
+        return Response((a,b))
