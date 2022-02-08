@@ -34,7 +34,7 @@ class GetModel(APIView):
         return Response(f"{result}")
 
 class SaveModelFile(APIView):
-    parser_classes = [FileUploadParser]
+    # parser_classes = [FileUploadParser]
 
     def post(self,request):
         a = print(request.data['file'])
