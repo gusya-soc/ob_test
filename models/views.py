@@ -41,7 +41,7 @@ class SaveModelFile(APIView):
         file = request.data['file']
         filename = file.name
         blobDB = BlobDB('containertest')
-        re = blobDB.create(id='123123123123',file=file)
+        re = blobDB.create(id='testtest.rar',file=file)
         print(re)
         print(re.items())
         return Response(f'{filename}upload completed\n{re.items()}')
