@@ -40,4 +40,6 @@ class SaveModelFile(APIView):
         a = request.data['file']
         b = request.data['filename']
         print(f'{type(a)},{len(a)}\n{type(b),len(b)}')
+        print(a,b)
+        print(a.name)
         return Response(f'{type(a)},{len(a)}\n{type(b),len(b)}')
