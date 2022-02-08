@@ -2,6 +2,7 @@ from rest_framework.serializers import SerializerMetaclass
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import authentication,permissions
+from rest_framework.parsers import FileUploadParser
 from .cosmosdb import CosmosDB
 
 collection = 'models'
@@ -33,7 +34,7 @@ class GetModel(APIView):
         return Response(f"{result}")
 
 class SaveModelFile(APIView):
-
+    parser_classes = [FileUploadParser]
 
     def post(self,request,filename):
         a = print(request.data['file'])

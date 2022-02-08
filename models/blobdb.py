@@ -24,4 +24,14 @@ class BlobDB():
         self.container_name = container
         self.container_client = self.client.get_container_client(self.container_name)
 
-    def 
+    def upload(self,file):
+        pass
+
+    def get(self):
+        pass
+
+    def remove(self):
+        pass
+
+    def update(self):
+        pass
